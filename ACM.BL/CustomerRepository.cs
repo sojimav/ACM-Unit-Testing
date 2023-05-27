@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    internal class CustomerRepository
+    public class CustomerRepository
     {
         public Customer Retrieve(int customerId)
         {
@@ -27,6 +27,13 @@ namespace ACM.BL
             }
 
             return customer;
+        }
+
+          public bool Save(Customer customer)
+        {
+
+            // Code that save the passed in customer
+             return true;
         }
     }
 }
