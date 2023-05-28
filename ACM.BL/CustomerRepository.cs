@@ -8,6 +8,14 @@ namespace ACM.BL
 {
     public class CustomerRepository
     {
+
+        private AddressRepository addressRepository { get; set; }
+
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+
         public Customer Retrieve(int customerId)
         {
             // Create the instance of the Customer class
@@ -24,6 +32,7 @@ namespace ACM.BL
                 customer.EmailAddress = "mashayete@gmail.com";
                 customer.FirstName = "Freddo";
                 customer.LastName = "Baggins";
+                customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
             }
 
             return customer;
