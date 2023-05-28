@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    internal class Product
+    public class Product
     {
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
@@ -32,15 +32,6 @@ namespace ACM.BL
             return isValid;
         }
 
-        public Product Retrieve(int productId)
-        {
-            return new Product();
-        }
-
-        public bool Save()
-        {
-            // Code that save the defined product
-            return true;
-        }
+  
     }
 }
