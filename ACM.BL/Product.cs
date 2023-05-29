@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
 
         private string productName;
@@ -16,7 +16,7 @@ namespace ACM.BL
             get
             {
                 
-                return StringHandler.InsertSpaces(productName);
+                return productName.InsertSpaces();
             }
 
             set
@@ -36,6 +36,10 @@ namespace ACM.BL
             ProductId = productId;
         }
 
+
+        public string Log() => $"{ProductId}: {ProductName} Detail: {ProductDescription}";
+
+        public override string ToString() => ProductName;
 
         // Validates the product data
         public override bool Validate()

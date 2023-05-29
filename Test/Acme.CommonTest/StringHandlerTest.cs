@@ -13,7 +13,7 @@ namespace Acme.CommonTest
           ;
             var source = "Sonic Screwdriver";
             var expected = "Sonic Screwdriver";
-            var handler = StringHandler.InsertSpaces(source);
+            var handler = source.InsertSpaces();
 
             Assert.AreEqual(expected, handler);
         }
